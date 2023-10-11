@@ -1,0 +1,60 @@
+<<------ PROJECT LAYOUT ----------------------->>
+AI image generation app
+Image gallery, which shows user prompts on hover
+Filter images with a search bar
+Create AI-generated images, and post them
+
+Homepage > Image gallery + search bar
+>> Card component (for every image in the gallery)
+>> FormField component for search bar
+>> Loading component (animation when images are loading)
+>> RenderCardGallery component
+
+Create page > Write a prompt to create an image, play around with settings, post the image
+>> FormField component for the form
+
+<<------ FRONT-END ---------------------------->>
+Create a Vite React + JS app
+Install tailwind-css (dev dependency)
+Install prettier-plugin-tailwindcss (dev dependency)
+
+Install file-saver
+Install react-router-dom
+
+<------ BACK-END ------------------------------>>
+Install cloudinary
+> will host images for us to retrieve later (makes our app much faster)
+> we don't want to store images in b64 because it's not scalable and only works if you have few images
+Install cors
+Install dotenv
+Install express
+Install mongoose
+Install openai
+Nodemon, is installed globally on our system already
+
+Notes
+add "type": "module" to package.json to enable ES6 modules
+>> import express from "express", and export default abc / export {ab, bc}
+>> instead of const express = require("express"), and module.exports = abc / module.exports = {ab, bc}
+
+1- Create server.js
+> dotenv.config(); to pull variables from .env
+> const app = express(); create express app
+> app.use(cors()); app.use(express.json()); basic middleware
+> app.get("/", async (req, res) => res.send("Hello!")); basic home route to test the server
+> app.listen(8080, () => console.log("Server has started on...)); start server on port8080
+
+2- Connect to mongoDB
+> import mongoose
+> mongoose.connect(url).then(...).catch(...)
+
+3- Create mongoDB models
+> models folder, new file
+> import mongoose from "mongoose";
+> const Post = new mongoose.Schema({...});
+> export default mongoose.model("Post", Post);
+
+4- Create routes
+> need routes for posts
+> need routes for DALL-E API
+
