@@ -15,7 +15,7 @@ const Home = () => {
 	useEffect(() => {
 		useEffect(() => {
 			const ping = async () => {
-				fetch("https://workout-helper-backend-lw08.onrender.com").then(
+				fetch("https://ai-image-gen-0xbq.onrender.com").then(
 					console.log("Server pinged.")
 				);
 			};
