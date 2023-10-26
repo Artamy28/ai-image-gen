@@ -13,6 +13,15 @@ const Home = () => {
 	const [searchTimeout, setSearchTimeout] = useState(null);
 
 	useEffect(() => {
+		useEffect(() => {
+			const ping = async () => {
+				fetch("https://workout-helper-backend-lw08.onrender.com").then(
+					console.log("Server pinged.")
+				);
+			};
+			ping();
+		}, []);
+
 		const fetchposts = async () => {
 			setLoading(true);
 			try {

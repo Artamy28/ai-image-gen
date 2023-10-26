@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { preview } from "../assets/exportAssets";
@@ -80,6 +80,15 @@ const Create = () => {
 			alert("Please enter a prompt");
 		}
 	};
+
+	useEffect(() => {
+		const ping = async () => {
+			fetch("https://workout-helper-backend-lw08.onrender.com").then(
+				console.log("Server pinged.")
+			);
+		};
+		ping();
+	}, []);
 
 	return (
 		<section className="max-w-7xl mx-auto">
