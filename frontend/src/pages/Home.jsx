@@ -13,15 +13,6 @@ const Home = () => {
 	const [searchTimeout, setSearchTimeout] = useState(null);
 
 	useEffect(() => {
-		useEffect(() => {
-			const ping = async () => {
-				fetch("https://ai-image-gen-0xbq.onrender.com").then(
-					console.log("Server pinged.")
-				);
-			};
-			ping();
-		}, []);
-
 		const fetchposts = async () => {
 			setLoading(true);
 			try {
@@ -47,6 +38,15 @@ const Home = () => {
 		};
 
 		fetchposts();
+	}, []);
+
+	useEffect(() => {
+		const ping = async () => {
+			fetch("https://ai-image-gen-0xbq.onrender.com").then(
+				console.log("Server pinged.")
+			);
+		};
+		ping();
 	}, []);
 
 	const handleSearchChange = (e) => {
